@@ -479,6 +479,46 @@ Sentence-level chunking that enriches each chunk's metadata with surrounding con
 
 ---
 
+## Docker
+
+Pre-built images are published on Docker Hub under **[techwiz](https://hub.docker.com/u/techwiz)**:
+
+| Image | Tag |
+|---|---|
+| `techwiz/raglab-backend` | `latest` |
+| `techwiz/raglab-frontend` | `latest` |
+
+### Run with Docker Compose
+
+```bash
+# 1. Make sure Ollama is running on your host
+ollama serve
+
+# 2. Pull and start both containers
+docker compose up
+
+# Frontend → http://localhost:3001
+# Backend  → http://localhost:8000
+```
+
+> Ollama runs on your host machine — the containers reach it via `host.docker.internal:11434`. No need to containerize Ollama.
+
+### Build locally
+
+```bash
+docker compose build
+docker compose up
+```
+
+### Pull images manually
+
+```bash
+docker pull techwiz/raglab-backend:latest
+docker pull techwiz/raglab-frontend:latest
+```
+
+---
+
 ## Local Setup
 
 ### Directory Structure
